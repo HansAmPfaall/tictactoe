@@ -34,6 +34,16 @@ async fn main() {
                     100.0,
                     BLUE,
                 );
+                draw_text(
+                    "Press Enter to Play again",
+                    screen_width() * 0.5 - screen_width() * 0.25,
+                    screen_height() * 0.5 + 50.0,
+                    20.0,
+                    DARKGRAY,
+                );
+                if is_key_pressed(KeyCode::Enter) {
+                    state = GameState::Playing;
+                }
             }
             GameState::AIWins => {
                 draw_text(
@@ -43,6 +53,17 @@ async fn main() {
                     100.0,
                     RED,
                 );
+                draw_text(
+                    "Press Enter to Play again",
+                    screen_width() * 0.5 - screen_width() * 0.25,
+                    screen_height() * 0.5 + 50.0,
+                    20.0,
+                    DARKGRAY,
+                );
+
+                if is_key_pressed(KeyCode::Enter) {
+                    state = GameState::Playing;
+                }
             }
         }
 

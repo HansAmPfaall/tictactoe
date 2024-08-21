@@ -1,5 +1,5 @@
 // src/game.rs
-#![allow(warnings)]
+// #![allow(warnings)]
 
 use crate::ai;
 use crate::draw;
@@ -11,7 +11,6 @@ pub fn play_game(mut field: &mut Vec<i8>, winner: &mut i8) -> GameState {
 
     draw::draw_grid();
     draw::draw_x_and_o(&field);
-    draw_circle(mouse_position().0, mouse_position().1, 5.0, YELLOW);
 
     // draw_text("IT WORKS!", 20.0, 20.0, 30.0, DARKGRAY);
 
@@ -37,8 +36,16 @@ pub fn play_game(mut field: &mut Vec<i8>, winner: &mut i8) -> GameState {
     //     }
     // }
     match *winner {
-        1 => GameState::PlayerWins,
-        -1 => GameState::AIWins,
+        1 => {
+            *winner = 0;
+            *field = vec![0; 9];
+            GameState::PlayerWins
+        }
+        -1 => {
+            *winner = 0;
+            *field = vec![0; 9];
+            GameState::AIWins
+        }
         _ => GameState::Playing,
     }
 }
