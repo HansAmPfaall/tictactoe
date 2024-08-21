@@ -1,6 +1,7 @@
 # Tic Tac Toe
 
-This is a simple implementation of the classic game Tic Tac Toe, written in Rust using the macroquad framework.
+
+This is a simple implementation of the classic game Tic Tac Toe, written in Rust using the [macroquad](https://github.com/not-fl3/macroquad) framework.$SELECTION_PLACEHOLDER$
 
 ## Contributing
 
